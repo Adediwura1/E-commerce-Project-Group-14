@@ -17,3 +17,28 @@ if(popUp){
      }, 1000);   
     });
 }
+
+
+function storeMe(){
+var popupStorage = document.getElementById('popupStorage').value
+
+var emailStore = localStorage.setItem('popupStorage', popupStorage);
+alert('Email Received')
+};
+
+
+
+function promoStorage(){
+var promoEmail = document.getElementById('Text').value;
+
+var promoStore = localStorage.setItem('promoEmail', promoEmail);
+
+alert('Email Saved')
+
+// const formId = document.getElementById('formId');
+// var promoButton = document.getElementById('promoButton');
+
+// formId.addEventListener('submit', function(event){
+//     event.preventDefault();
+// })
+}

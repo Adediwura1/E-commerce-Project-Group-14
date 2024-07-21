@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-   
- <!-- <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
  
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+ES+Deco:wght@100..400&display=swap" rel="stylesheet">
@@ -21,7 +18,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.css">
 
-
     <link rel="stylesheet" href="project.css">
     <title>Ecommerce page</title>
 </head>
@@ -30,10 +26,9 @@
 <div><i class="fa-solid fa-bars fa-lg" style="color: #0f0f0f;" id="menuBar"></i></div>
 
 
-
 <ul>
     <li>
-    <a href="">
+    <a href="index.html">
         <i class="fa-solid fa-house fa-lg" style="color: #080808;"></i>
         <span class="navBar">HOME</span>
     </a>
@@ -41,7 +36,7 @@
 </li>
 
 <li>
-    <a href="">
+    <a href="shop.html">
         <i class="fa-brands fa-shopify fa-lg" style="color: #121212;"></i>
         <span class="navBar">SHOP</span>
     </a>
@@ -90,8 +85,31 @@
     <span class="navTip">LOGIN</span>
 </li>
 
+
+<li>
+    <a href="">
+        <i class="fa-solid fa-user fa-lg" style="color: #0d0d0d;"></i>
+        <span class="navBar">ADMIN</span>
+    </a>
+    <span class="navTip">ADMIN</span>
+</li>
+
+<li>
+    <a href="shop.html">
+        <i class="fa-solid fa-cart-shopping fa-lg" style="color: #111111;" id="Cart"></i>
+        <span class="navBar">CART</span>
+    </a>
+    <span class="navTip">CART</span>
+</li>
+
+
 </ul>  
     </div>
+
+
+
+
+
 
 
 <div class="mainPage">
@@ -99,41 +117,15 @@
     <div class="HeadDiv">
     <div  class="logoName"><h1>WEAR<strong>CULTURE</strong></h1></div>
     <div class="Search">
-        <!-- <form action=""> -->
-            <input type="text" name="" placeholder="Search here....." id="inputSearch">
+        <form action="">
+            <input type="text" name="" placeholder="Search here....." id="inputSearch" onkeyup="Search()">
             <button class="searchButton">Go</button>
-        <!-- </form> -->
+        </form>
     </div>
 
-<div class="allIcons">
-    <ul>
-        <li>
-            <a href="">
-    <i class="fa-regular fa-heart fa-beat fa-xl" style="color: #0c0d0d;"></i>
-</a>
-<span class="allIconsTip">Like</span>
-</li>
 
-<li>
-    <a href="">
-    <i class="fa-solid fa-cart-shopping fa-lg" style="color: #111111;" id="Cart"></i>
-</a>
-    <span class="allIconsTip1">Cart</span>
-
-</li>
-
-<li>
-    <a href="">
-    <i class="fa-solid fa-user fa-lg" style="color: #0d0d0d;"></i>
-</a>
-    <span class="allIconsTip2">Admin</span>
-
-</li>
-</ul>
 </div>        
-    
-
-</div>
+    </div>
 
 
 <div class="midPage">
@@ -144,8 +136,8 @@
                 <div class="middle">
                     <div class="left">
                         <span>NEW FASHION 2024</span>
-                        <h3>Traditional Aso ofi with accessories</h3>
-                        <a href="" class="infobtn">Shop Now</a>
+                        <h3>Aso Ofi With Accessories</h3>
+                        <a href="shop.html" class="infobtn">SHOP NOW</a>
                     </div>
                     <div class="right">
                         <img src="Images/image1.png" alt="" srcset="" class="img1">
@@ -159,7 +151,7 @@
                     <div class="left">
                         <span>NEW FASHION 2024</span>
                         <h3>Trending Hausa Collection</h3>
-                        <a href="" class="infobtn">Shop Now</a>
+                        <a href="shop.html" class="infobtn">Shop Now</a>
                     </div>
                     <div class="right">
                         <img src="Images/image 3.png" alt="" srcset="" class="img2">
@@ -174,7 +166,7 @@
                     <div class="left">
                         <span>NEW FASHION 2024</span>
                         <h3>Trending Igbo Collection</h3>
-                        <a href="" class="infobtn">Shop Now</a>
+                        <a href="shop.html" class="infobtn">Shop Now</a>
                     </div>
                     <div class="right">
                         <img src="Images/image 2.png" alt="" srcset="" class="img3">
@@ -187,37 +179,7 @@
           </ul>
         </div>
       </div>
-    <!-- <div class="WriteUp">
-        <h2>NEW FASHION 2024</h2>
-        <h3>Trending Traditional Wears <br>For Men & Women</h3><br>
-        <h6><a href="">Show more</a></h6>
-      </div> -->
-
-  <!-- <div class="swiper">
-    Additional required wrapper -->
-    <!-- <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0022.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0025.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0033.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0027.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0000.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0024.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0034.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0035.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240627-WA0023.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="Images/IMG-20240623-WA0008.jpg" alt=""></div>
-
-    </div> --> 
-    <!-- If we need pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
-  
-    <!-- If we need navigation buttons -->
-    <!-- <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
-  
-    <!-- If we need scrollbar -->
-    <!-- <div class="swiper-scrollbar"></div> -->
-  <!-- </div> -->
+    
   
 </div>
 </div>
@@ -226,29 +188,33 @@
 <div class="Container">
 
  <section class="CategoriesSect">
+    
     <div class="centerCategories">
         <div class="Categories">
-<img src="Images/beads2.jpg" alt="" srcset="">
+<a href="shop.html"><img src="Images/beads2.jpg" alt="" srcset="">
 <div>
     <p>ACCESSORIES</p> 
 </div>
+</a>
 </div>
 
 
 
 <div class="Categories">
-<img src="Images/aso ofi bundles.webp" alt="">
+<a href="shop.html"><img src="Images/aso ofi bundles.webp" alt="">
 <div>
 <p>ASO OFI</p> 
 </div>
+</a>
 </div>
 
 
 <div class="Categories">
-    <img src="Images/IMG-20240623-WA0016.jpg" alt="">
+    <a href="shop.html"><img src="Images/IMG-20240623-WA0016.jpg" alt="" id="imgMove">
     <div>
     <p>OTHERS</p> 
     </div>
+</a>
 </div>
 </section>
 
@@ -261,134 +227,113 @@
     <div class="productDiv">
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
+                <a href="shop.html" class="productLink">
                     <img src="Images/IMG-20240623-WA0021-removebg-preview.png" alt="" srcset="">
                 </a>
             </div>
 <div class="productInfo">
-    <span>African Igbo Traditional Outfit</span>
-    <a href="#">
-        Black Isi-Agu Fabric
-    </a>
+    <span>Black Isi-Agu Traditional Fabric</span>
     <h5>₦20,000</h5>
+    <a href="shop.html">
+        ADD TO CART
+    </a>
+   
 </div>
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0a0a0a;"></i></li>
-</ul>
         </div> 
 
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
+                <a href="shop.html" class="productLink">
                     <img src="Images/Dl8SFJhWsAAopDN-removebg-preview.png" alt="" srcset="">
                 </a>
             </div>
 
 
 <div class="productInfo">
-    <span>Traditional Neck & Hand Bead</span>
-    <a href="#">
-       Cream Coral Orange Red Bead
-    </a>
+    <span>Coral Orange Red Neck & Hand Bead</span>
     <h5>₦15,000</h5>
+    <a href="shop.html">
+        ADD TO CART
+    </a>
 </div>
 
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0f0f0f;"></i></li>
-</ul>
         </div> 
 
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
-                    <img src="Images/Aso ofi 2.png" alt="" srcset="">
+                <a href="shop.html" class="productLink">
+                    <img src="Images/aso ofi multi.png" alt="" srcset="">
                 </a>
             </div>
 
 
 
 <div class="productInfo">
-    <span>Traditional Aso Ofi</span>
-    <a href="#">
-        Multicolor strip Aso ofi
-    </a>
+    <span>Multicolor strip Aso ofi</span>
     <h5>₦30,000</h5>
-</div>
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0f0f0f;"></i></li>
-</ul>
+    <a href="shop.html">
+        ADD TO CART
+    </a>
 
+</div>
         </div> 
 
 
+      
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
+                <a href="shop.html" class="productLink">
                     <img src="Images/IMG-20240627-WA0002-removebg-preview.png" alt="" srcset="">
                 </a>
             </div>
 <div class="productInfo">
-    <span>Traditional Hausa Fabric</span>
-    <a href="#">
-        Different Set Of Plain Color Fabric
-    </a>
+    <span>Plain Color Hausa Fabric</span>
     <h5>₦20,000</h5>
+    <a href="shop.html">
+        ADD TO CART
+    </a>
+
 </div>
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0f0f0f;"></i></li>
-</ul>
+<!-- <ul class="productIcons">
+    <li><a href="#top"><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></a></li>
+    <li><a href="shop.html"><i class="fa-solid fa-cart-shopping" style="color: #0a0a0a;"></i></a></li>
+</ul> -->
 
         </div> 
 
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
+                <a href="shop.html" class="productLink">
                     <img src="Images/handbead3.png" alt="" srcset="">
                 </a>
             </div>
 <div class="productInfo">
-    <span>Traditional Hand Bead</span>
-    <a href="#">
-        Cream Coral Orange Red Hand Bead
-    </a>
+    <span>Cream Coral Orange Red Hand Bead
+    </span>
     <h5>₦5,000</h5>
+    <a href="shop.html">
+        ADD TO CART
+    </a>
 </div>
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0f0f0f;"></i></li>
-</ul>
-
         </div> 
+
 
         <div class="productItem">
             <div class="overlayDiv">
-                <a href="#top" class="productLink">
-                    <img src="Images/aso ofi 2.jpg" alt="" srcset="">
+                <a href="shop.html" class="productLink">
+                    <img src="Images/aso ofi 2.png" alt="" srcset="">
                 </a>
             </div>
 <div class="productInfo">
-    <span>Traditional Trending Aso Ofi</span>
-    <a href="#">
-        Black and White Stripped color
-    </a>
+    <span>Black and White Stripped color
+    </span>
     <h5>₦25,000</h5>
-</div>
-<ul class="productIcons">
-    <li><i class="fa-regular fa-heart" style="color: #19191a;"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i></li>
-    <li><i class="fa-solid fa-cart-shopping" style="color: #0f0f0f;"></i></li>
-</ul>
- 
+    <a href="shop.html">
+        ADD TO CART
+    </a>
+</div> 
         </div> 
+
     </div>
 </section>
 
@@ -398,7 +343,7 @@
 
         <h1>Fashion Collection</h1>
         <p>New Arrival <span class="colorEdit">Sale 50% OFF</span>Limited Time Offer</p>
-    <a href="">Discover Now</a>
+    <a href="shop.html">Discover Now</a>
     </div> 
     <div class="promoImg">
 <img src="Images/banner.png " alt="" srcset="">
@@ -407,9 +352,12 @@
 
 
 <section class="contactSect">
+    <!-- <form id="formId"> -->
     <h6 class="Offer">To get exclusive offers, unique gifts ideas, and personalized tips for shopping on Wear CULTURE</h6>
-    <div class="subButton"><input type="text" name="" placeholder="Enter your email" id="Text"><button>Subscribe</button></div>
-</section>
+    <div class="subButton"><input type="text" name="" placeholder="Enter your email" id="Text">
+        <button onclick="promoStorage()" id="promoButton">Subscribe</button></div>
+    <!-- </form> -->
+    </section>
 
 
 <footer>
@@ -454,12 +402,11 @@
         <div class="RightPopup">
             <div class="rightContent">
                 <h1>Get Discount <span>50%</span> Off</h1>
-                <p>Sign up to our newsletter and save 30% on your next purchase</p>
-            <form action="">
-                <input type="email" name="" placeholder="Enter your email..." class="popupForm">
-                <!-- <button>Subscribe</button> -->
-                 <a href="#">Subscribe</a>
-            </form>
+                <p>Sign up to our newsletter and save 50% during our promo</p>
+            <!-- <form action=""> -->
+                <input type="email" name="" placeholder="Enter your email..." class="popupForm" id="popupStorage">
+                <button onclick="storeMe()">Subscribe</button>
+            <!-- </form> -->
             </div>
         </div>
     </div>
@@ -470,10 +417,9 @@
 </div>
 
 <script src="https://kit.fontawesome.com/d0a77a67c7.js" crossorigin="anonymous"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.js"></script> -->
- <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.js"></script>
     <script src="glide.js"></script>
+    <!-- <script src="shop.js"></script> -->
     <script src="project.js"></script>
 </body>
 </html>
