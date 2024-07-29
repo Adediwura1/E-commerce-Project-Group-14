@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+</head>
+<style>
+    
+.Review-page{
+    height: 100vh;
+    margin-left: 400px;
+}
+#review-form{
+    flex-direction: column;
+    background-color:#9b9796;
+    padding: 10px;
+     border: 1px solid #ccc;
+     margin-top: 10px;
+     display: flex;
+     align-items: center;
+     align-items: center;
+    justify-content: center;
+     gap: 20px;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+
+<body>
+    <section>
+        <div class="Review-page">
+           <form id="review-form">
+               <label for="customer-name">Customer Name:</label>
+               <input type="text" id="customer-name" required>
+               <label for="review-text">Review:</label>
+               <textarea id="review-text" rows="4" required></textarea>
+               <label for="review-image">Upload your image:</label>
+               <input type="file" id="review-image" accept="image/*">
+               <button type="submit">Submit Review</button>
+           </form>
+           <h2>Customer Reviews</h2>
+           <ul id="review-list"></ul>
+       </div>
+   </div>
+   </section>
+
+
+
+
+
+
+
+
+    <script>
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const customerName = document.getElementById('customer-name').value;
+    const reviewText = document.getElementById('review-text').value;
+    const reviewImage = document.getElementById('review-image').files[0];
+    if (customerName && reviewText) {
+        const reviewList = document.getElementById('review-list');
+        const reviewItem = document.createElement('li');
+        const reviewDetails = document.createElement('div');
+        reviewDetails.innerHTML = `<strong>${customerName}</strong>: ${reviewText}`;
+        reviewItem.appendChild(reviewDetails);
+        if (reviewImage) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                reviewItem.insertBefore(img, reviewDetails);
+            };
+            reader.readAsDataURL(reviewImage);
+        }
+        reviewList.appendChild(reviewItem);
+        document.getElementById('review-form').reset();
+    }
+});
+
+    </script>
+</body>
+</html>
