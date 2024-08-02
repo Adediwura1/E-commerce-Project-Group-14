@@ -113,7 +113,9 @@ document.getElementById('review-form').addEventListener('submit', function(event
         reviewList.appendChild(reviewItem);
         document.getElementById('review-form').reset();
     };
-    
+    const ReviewBtn = document.getElementById('reviewItem')
+    localStorage.setItem('review', JSON.stringify(ReviewBtn))
+    console.log(ReviewBtn);
 });
 
 // vendor profile
