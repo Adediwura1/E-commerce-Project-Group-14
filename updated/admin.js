@@ -57,29 +57,39 @@ Navitems.forEach(function(item){
     })
 })
 // add product to page
-document.getElementById('product-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const productName = document.getElementById('product-name').value;
-    const productPrice = document.getElementById('product-price').value;
-    const productImage = document.getElementById('product-image').files[0];
-    const productId = document.getElementById('Product-id').value;
-    const ProductCategory = document.getElementById('Product-category').value;
-    if (productName && productPrice && productImage && productId && ProductCategory) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const productList = document.getElementById('items-list');
-            const productItem = document.createElement('li');
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<h3>${productName}</h3> <p>Price: #${productPrice}</p> 
-             <p>id:${productId}</p>   <p>category: ${ProductCategory}</p>`;
-            productItem.appendChild(img);
-            productItem.appendChild(productDetails);
-            productList.appendChild(productItem);
-            document.getElementById('product-form').reset();
-        };
-        reader.readAsDataURL(productImage);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('product-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const productName = document.getElementById('product-name').value;
+        const productPrice = document.getElementById('product-price').value;
+        const productImage = document.getElementById('product-image').files[0];
+        const productId = document.getElementById('Product-id').value;
+        const ProductCategory = document.getElementById('Product-category').value;
+
+        if (productName && productPrice && productImage && productId && ProductCategory) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const product = {
+                    productName: productName,
+                    productPrice: productPrice,
+                    productImage: e.target.result,
+                    productId: productId,
+                    ProductCategory: ProductCategory
+                };
+
+                saveProduct(product);
+                alert('Product added successfully!');
+                document.getElementById('product-form').reset();
+            };
+            reader.readAsDataURL(productImage);
+        }
+    });
+
+    function saveProduct(product) {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        products.push(product);
+        localStorage.setItem('products', JSON.stringify(products));
     }
 });
 
