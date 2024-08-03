@@ -228,7 +228,7 @@ tbody tr td{
     font-weight: 600;
 }
 
-body .product_container{
+.product_container{
      
         display: flex;
         justify-content: center;
@@ -236,7 +236,7 @@ body .product_container{
         /* height: 100vh; */
         margin: 0;
         font-family: Arial, sans-serif;
-        display: none;
+       
         margin-left: 600px;
         font-size: 18px;
         color: #0e0101;
@@ -263,6 +263,7 @@ body .product_container{
     border-radius: 8px;
     background-color: #f9f9f9;
     margin-left: 600px;
+    display: none;
 }
 .product_container button{
     padding: 10px;
@@ -370,6 +371,108 @@ input {
 .hidden {
     display: none;
 }
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.form-container, .product-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries */
+
+@media (max-width: 750px) {
+    .form-container, .product-container {
+        padding: 15px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        width: 90%;
+    }
+
+    label, input, button {
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 477px) {
+    .form-container, .product-container {
+        padding: 10px;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    label, input, button {
+        margin-bottom: 5px;
+    }
+
+    button {
+        padding: 6px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -25,13 +25,6 @@ $(document).ready(function(){
     Review_body.style.display = "none"
     Profile_body.style.display = "none"
    };
-  var logo = document.querySelector(".logo")
-  logo.addEventListener("click",()=>{
-    interface.style.display = "block"
-     Product_Container.style.display = "none"
-  Review.style.display = "none"
-  Profile_body.style.display = "none"
-})
 Review.onclick = () =>{
     Review_body.style.display = "block"
     Product_Container.style.display = "none"
@@ -79,8 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 saveProduct(product);
-                alert('Product added successfully!');
-                document.getElementById('product-form').reset();
+                localStorage.setItem('latestProduct', JSON.stringify(product)); // Save the latest product to local storage
+                window.location.href = ''; // Redirect to the new page
+                console.log(product);
+                
             };
             reader.readAsDataURL(productImage);
         }
@@ -97,7 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
 let Home = document.getElementById("Home")
     //href to home page
 Home.addEventListener("click",()=>{
-    window.location.href = ""
+    window.location.href = "index.html"
+})
+let logOut = document.getElementById("Nav-logout")
+logOut.addEventListener ("click", ()=>{
+    window.location.href = "login.html"
 })
 // customer review on Home 
 document.getElementById('review-form').addEventListener('submit', function(event) {
