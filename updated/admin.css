@@ -27,7 +27,29 @@ body{
 .logo{
     display: flex; align-items:flex-end; color: #562e2e;
 }
-
+.logoName h1{
+    font-family: "Oswald", sans-serif;
+   font-optical-sizing: auto;
+   font-style: normal;
+   font-size: 2.2rem;
+   padding-top: 0.7rem;
+ }
+ strong{
+    color: brown;
+    font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      animation: move 4s linear infinite;
+      position: relative;
+    }
+     @keyframes move{
+      0%, 100% {
+        bottom: -25px;
+      }
+      50% {
+        bottom: 35px;
+      }
+    }
 #items{
     margin-top: 60px;
 }
@@ -205,100 +227,64 @@ tbody tr td{
     color: blueviolet ;
     font-weight: 600;
 }
-@media (max-width: 750px) {
-    #menu {
-        width: 268px;
-        position: fixed;
-        left: -265px;
-        transition: 0.3s ease;
-    }
-    #menu.active{
-        left: 0px;
-    }
-    #menu-btn{
-        display: initial;
-    }
-    .interface {
-        width: 100%;
-        margin-left: 0px;
-        display: inline-block;
-        transition: 0.3s ease;
-    }
-    #menu.active~ .interface{
-        width: cal(100%-270px);
-        margin-left: 270px;
-        transition: 0.3s ease;
-    }
-    .interface .navigation {
-        width: 100%; 
-    }
-    .values {
-            padding: 30px 30px 0 30px;
-            justify-content: flex-start;
-        }
-    .values .val-box {
-            padding: 16px 20px;
-            margin: 10px 20px 10px 0;
-        }
-        .board {
-            width: 92%;
-            padding: 0;
 
-        }
-        table{
-            width: 100%;
-            border-collapse: collapse;
-        }
-        #menu.active~ .product_container{
-            width: cal(100%-305px);
-            margin-left: 305px;
-            transition: 0.3s ease;
-        }
-        .product_container{
-            width: 100%;
-            margin-left: 0px;
-            display: inline-block;
-            transition: 0.3s ease;
-        }
-        .test .head-wrapper{
-            flex-direction: row;
-            padding: 30px 100px;
-        }
-        .test .thumbnail{
-            width: 200px;
-            height: 200px;
-        }
-
-    }
-    @media (max-width: 477px) {
-        .interface .navigation {
-            padding: 15px;
-        }
-        .search input {
-            width: 150px;
-        }
-        .dash {
-            padding: 30px 15px 0 15px;    
-        }
-        .values{
-            padding: 15px 15px 0 15px;
-        }
-        .values .val-box {
-            width: 100%;
-            margin: 8px 0;
-        }
-        .board{
-            margin: 30px 15px 30px 15px;
-        }
-        .product_container{
-            padding: 15px;
-        }
-    }
 .product_container{
-    display: none; margin: 0 auto; height: 60vh; align-items: center; display: none; margin-left: 400px;
+     
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+        margin: 0;
+        font-family: Arial, sans-serif;
+       
+        margin-left: 600px;
+        font-size: 18px;
+        color: #0e0101;
+    }
+    
+/* .product_container{
+    display: none; 
+    margin: 0 auto; 
+    height: 60vh; 
+    align-items: center; 
+    display: none;
+    margin-left: 400px;
+
+} */
+.product_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-left: 600px;
+    display: none;
+}
+.product_container button{
+    padding: 10px;
+    font-size: 16px;
+    background-color: brown;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.product_container button:hover{
+    background-color: #b6afaf;
+    color: #5f0b0b;
 }
 .new_product_container{
-    flex-direction: column; background-color:#9b9796; padding: 10px; border: 1px solid #ccc; margin-top: 10px; display: flex; align-items: center; gap: 20px;
+    flex-direction: column; 
+    background-color:#9b9796; 
+    padding: 10px; border: 1px solid #ccc; 
+    margin-top: 10px; display: flex; 
+    align-items: center; gap: 20px;
 }
 .products{
    display: flex; margin: .3rem; justify-content: center; align-items: center;
@@ -320,11 +306,6 @@ tbody tr td{
 }
 select{
     width: 200px; height: 30px; border-radius: 1rem; padding-left: 1rem; font-size: 17px; border: none; outline: none; color: var(--primary-color);
-}
-
-.product_container button:hover{
-    background-color: #b6afaf;
-    color: #5f0b0b;
 }
 
 .NewProductDisplay{
@@ -381,21 +362,58 @@ form {
     gap: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea,
-input[type="file"] {
+input {
     padding: 10px;
     font-size: 16px;
+    border-radius: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.form-container, .product-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
 }
 
 button {
     padding: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
+    background-color: #007BFF;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -403,6 +421,157 @@ button:hover {
     background-color: #0056b3;
 }
 
-.hidden {
-    display: none;
+/* Media Queries */
+
+@media (max-width: 750px) {
+    .form-container, .product-container {
+        padding: 15px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        width: 90%;
+    }
+
+    label, input, button {
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
 }
+
+@media (max-width: 477px) {
+    .form-container, .product-container {
+        padding: 10px;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    label, input, button {
+        margin-bottom: 5px;
+    }
+
+    button {
+        padding: 6px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 750px) {
+    #menu {
+        width: 268px;
+        position: fixed;
+        left: -265px;
+        transition: 0.3s ease;
+    }
+    #menu.active{
+        left: 0px;
+    }
+    #menu-btn{
+        display: initial;
+    }
+    .interface {
+        width: 100%;
+        margin-left: 0px;
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+    #menu.active~ .interface{
+        width: cal(100%-270px);
+        margin-left: 270px;
+        transition: 0.3s ease;
+    }
+    .interface .navigation {
+        width: 100%; 
+    }
+    .values {
+            padding: 30px 30px 0 30px;
+            justify-content: flex-start;
+        }
+    .values .val-box {
+            padding: 16px 20px;
+            margin: 10px 20px 10px 0;
+        }
+        .board {
+            width: 92%;
+            padding: 0;
+
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #menu.active~ .product_container{
+            width: cal(100%-305px);
+            margin-left: 305px;
+            transition: 0.3s ease;
+        }
+        .product_container{
+            padding: 15px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            width: 90%;
+        }
+        label, input, button {
+            margin-bottom: 8px;
+        }
+        button {
+            padding: 8px;
+        }
+    }
+    @media (max-width: 477px) {
+        .interface .navigation {
+            padding: 15px;
+        }
+        .search input {
+            width: 150px;
+        }
+        .dash {
+            padding: 30px 15px 0 15px;    
+        }
+        .values{
+            padding: 15px 15px 0 15px;
+        }
+        .values .val-box {
+            width: 100%;
+            margin: 8px 0;
+        }
+        .board{
+            margin: 30px 15px 30px 15px;
+        }
+        body .product_container{
+            padding: 5px;
+            box-shadow: none;
+            background-color: transparent;
+        }
+        form {
+            width: 100%;
+        }
+        label, input, button {
+            margin-bottom: 5px;
+        }
+        button {
+            padding: 6px;
+        }
+    }

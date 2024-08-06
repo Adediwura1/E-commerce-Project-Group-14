@@ -28,15 +28,15 @@
             <p id="profile-phone"></p>
             <p id="profile-description"></p>
         </div>
-        <div class="logo">
-            <img src="./assets/LOGO.png" alt="LOGO">
+        <div  class="logoName"><h1>WEAR<strong>CULTURE</strong></h1></div>
+            
         </div>
         <div id="items">
-            <li id="Nav_Dashboard" ><i class="bx bx-pie-chart-alt"></i>Dashboard</li>
+            <li id="Nav_Dashboard" ><i class="bx bx-pie-chart-alt"></i><a href="#">Dashboard</a></li>
             <li id="Nav_Order_list"><i class="bx bx-rotate-left"></i>Orders</li>
             <li id="Nav_add_product"><i class="bx bx-cart-alt"></i>Add Product</li>
-            <li id="Nav_customers"><i class="bx bx-edit"></i>Customers Review</li>
-            <li id="Home"><i class="bx bx-home"></i><a href="#">Home</a></li>
+            <li id="Nav_customers"><i class="bx bx-edit"></i><a href="reviews.html">Customers Review</a></li>
+            <li id="Home"><i class="bx bx-home"></i><a href="">Home</a></li>
             <li id="Profile"> <i class="bx bx-user-pin"></i>Profile</li>
             <li id="Nav-logout"><i class="bx bx-log-out-circle"></i><a href="index.html">Log out</a></li>
         </div>
@@ -195,7 +195,7 @@
 </div>
 </div>  
 </section>
-<section  class="product_container"> 
+<section  class="product_container" > 
 
 
    
@@ -237,8 +237,8 @@
         </div>
     </form>
     </div> 
-    <h2>Items</h2>
-    <ul id="items-list"></ul>
+   
+    <ul id="items-list" style="display: none;"></ul>
 <!-- list of product will display here -->
     </section>
 </section>
@@ -253,16 +253,6 @@
 </section>
 <section>
      <div class="Review-page">
-        <form id="review-form">
-            <label for="customer-name">Customer Name:</label>
-            <input type="text" id="customer-name" required>
-            <label for="review-text">Review:</label>
-            <textarea id="review-text" rows="4" required></textarea>
-            <label for="review-image">Upload your image:</label>
-            <input type="file" id="review-image" accept="image/*">
-            <button type="submit">Submit Review</button>
-        </form>
-        <h2>Customer Reviews</h2>
         <ul id="review-list"></ul>
     </div>
 </div>

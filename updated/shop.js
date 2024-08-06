@@ -135,6 +135,7 @@ function reloadCart() {
         prodList.appendChild(li);
     });
  totPrice.innerHTML = `<small>SUBTOTAL (${count} items)  :  ₦ </small>` + totalPrice;
+ 
  const total = totalPrice
  localStorage.setItem('totalAmount', JSON.stringify(total))
  console.log(total)

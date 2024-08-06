@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dfdbdb;
+            background-image:linear-gradient(to right,#fff,rgba(165, 42, 42, 0.733),rgba(0, 0, 0, 0.548)) ;
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: brown;
+            padding: 20px;
+            border: 1px solid ;
+            border-radius: 4px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-style: normal;   
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            font-style: normal;
+        }
+        img {
+       width: 100%;
+       object-fit: cover;
+       transition: all 500ms linear;
+       max-height: 150px;
+       max-width: 150px;
+       margin-right: 20px;
+       border-radius: 8px;
+        }
+        h3 {
+            margin: 0 0 10px;
+            color: #333;
+            font-style: normal;
+            font-size: 30px;
+        }
+        p {
+            margin: 5px 0;
+            color: #666;
+            font-style: normal;
+            font-size: 20px;
+        }
+        button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 150px 100px 0 ;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="items-list">
+            <h2>New Products List</h2>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const productList = document.getElementById('items-list');
+            
+            // Load existing products from local storage
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            products.forEach(function(product) {
+                displayProduct(product);
+            });
+
+            function displayProduct(product) {
+                const productItem = document.createElement('li');
+                
+                const img = document.createElement('img');
+                img.src = product.productImage;
+
+                const productDetails = document.createElement('div');
+                productDetails.innerHTML = `<h3>${product.productName}</h3> 
+                                            <p>Price: #${product.productPrice}</p> 
+                                            <p>ID: ${product.productId}</p> 
+                                            <p>Category: ${product.ProductCategory}</p>`;
+                
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function() {
+                    deleteProduct(product.productId);
+                    productList.removeChild(productItem);
+                });
+
+                productItem.appendChild(img);
+                productItem.appendChild(productDetails);
+                productItem.appendChild(deleteButton);
+                productList.appendChild(productItem);
+            }
+
+            function deleteProduct(productId) {
+                let products = JSON.parse(localStorage.getItem('products')) || [];
+                products = products.filter(product => product.productId !== productId);
+                localStorage.setItem('products', JSON.stringify(products));
+            }
+        });
+    </script>
+</body>
+</html>

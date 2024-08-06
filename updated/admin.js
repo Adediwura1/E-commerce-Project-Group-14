@@ -25,13 +25,6 @@ $(document).ready(function(){
     Review_body.style.display = "none"
     Profile_body.style.display = "none"
    };
-  var logo = document.querySelector(".logo")
-  logo.addEventListener("click",()=>{
-    interface.style.display = "block"
-     Product_Container.style.display = "none"
-  Review.style.display = "none"
-  Profile_body.style.display = "none"
-})
 Review.onclick = () =>{
     Review_body.style.display = "block"
     Product_Container.style.display = "none"
@@ -57,29 +50,41 @@ Navitems.forEach(function(item){
     })
 })
 // add product to page
-document.getElementById('product-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const productName = document.getElementById('product-name').value;
-    const productPrice = document.getElementById('product-price').value;
-    const productImage = document.getElementById('product-image').files[0];
-    const productId = document.getElementById('Product-id').value;
-    const ProductCategory = document.getElementById('Product-category').value;
-    if (productName && productPrice && productImage && productId && ProductCategory) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const productList = document.getElementById('items-list');
-            const productItem = document.createElement('li');
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<h3>${productName}</h3> <p>Price: #${productPrice}</p> 
-             <p>id:${productId}</p>   <p>category: ${ProductCategory}</p>`;
-            productItem.appendChild(img);
-            productItem.appendChild(productDetails);
-            productList.appendChild(productItem);
-            document.getElementById('product-form').reset();
-        };
-        reader.readAsDataURL(productImage);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('product-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const productName = document.getElementById('product-name').value;
+        const productPrice = document.getElementById('product-price').value;
+        const productImage = document.getElementById('product-image').files[0];
+        const productId = document.getElementById('Product-id').value;
+        const ProductCategory = document.getElementById('Product-category').value;
+
+        if (productName && productPrice && productImage && productId && ProductCategory) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const product = {
+                    productName: productName,
+                    productPrice: productPrice,
+                    productImage: e.target.result,
+                    productId: productId,
+                    ProductCategory: ProductCategory
+                };
+
+                saveProduct(product);
+                localStorage.setItem('latestProduct', JSON.stringify(product)); // Save the latest product to local storage
+                window.location.href = ''; // Redirect to the new page
+                console.log(product);
+                
+            };
+            reader.readAsDataURL(productImage);
+        }
+    });
+
+    function saveProduct(product) {
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        products.push(product);
+        localStorage.setItem('products', JSON.stringify(products));
     }
 });
 
@@ -87,7 +92,11 @@ document.getElementById('product-form').addEventListener('submit', function(even
 let Home = document.getElementById("Home")
     //href to home page
 Home.addEventListener("click",()=>{
-    window.location.href = ""
+    window.location.href = "index.html"
+})
+let logOut = document.getElementById("Nav-logout")
+logOut.addEventListener ("click", ()=>{
+    window.location.href = "login.html"
 })
 // customer review on Home 
 document.getElementById('review-form').addEventListener('submit', function(event) {
@@ -113,7 +122,9 @@ document.getElementById('review-form').addEventListener('submit', function(event
         reviewList.appendChild(reviewItem);
         document.getElementById('review-form').reset();
     };
-    
+    const ReviewBtn = document.getElementById('reviewItem')
+    localStorage.setItem('review', JSON.stringify(ReviewBtn))
+    console.log(ReviewBtn);
 });
 
 // vendor profile

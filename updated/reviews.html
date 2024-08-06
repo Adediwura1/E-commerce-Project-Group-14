@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #827676;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #review-list {
+            list-style: none;
+            padding: 0;
+            width: 80%;
+            margin-left: 150px;
+        }
+        #review-list li {
+           background: #1118272e;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px brown(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        #review-list img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        #review-list div {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Reviews</h1>
+    <ul id="review-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewList = document.getElementById('review-list');
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            
+            reviews.forEach(review => {
+                const reviewItem = document.createElement('li');
+                const reviewDetails = document.createElement('div');
+                reviewDetails.innerHTML = `<strong>${review.name}</strong>: ${review.text}`;
+                reviewItem.appendChild(reviewDetails);
+                
+                if (review.imageSrc) {
+                    const img = document.createElement('img');
+                    img.src = review.imageSrc;
+                    reviewItem.insertBefore(img, reviewDetails);
+                }
+                
+                reviewList.appendChild(reviewItem);
+            });
+        });
+    </script>
+</body>
+</html>
