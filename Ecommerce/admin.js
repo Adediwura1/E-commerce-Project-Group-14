@@ -4,6 +4,11 @@ $(document).ready(function(){
         $('#menu').toggleClass("active")
     })
     })
+    let Menu = document.getElementById('Menu-Id');
+    function toggleMenu (){
+        Menu.classList.toggle("open-menu");
+    }
+ 
  
 
     const Dashboard = document.getElementById("Nav_Dashboard")
