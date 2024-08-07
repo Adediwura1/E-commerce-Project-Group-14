@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    // Handle form submission for adding new products
+    // submission for adding new products
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('product-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -204,34 +204,88 @@ function displayReview(review) {
 }
 
 
-
-
-
-
 // vendor profile
-document.getElementById('profile-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const vendorName = document.getElementById('vendor-name').value;
-    const vendorEmail = document.getElementById('vendor-email').value;
-    const vendorPhone = document.getElementById('vendor-phone').value;
-    const vendorDescription = document.getElementById('vendor-description').value;
-    const vendorImage = document.getElementById('vendor-image').files[0];
-    if (vendorName && vendorEmail && vendorPhone && vendorDescription && vendorImage) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('profile-img').src = e.target.result;
-            document.getElementById('profile-container').classList.add('hidden');
-            document.getElementById('profile-display').classList.remove('hidden');
-       
-        };
-        reader.readAsDataURL(vendorImage);
-        document.getElementById('profile-name').textContent = `Name: ${vendorName}`;
-        document.getElementById('profile-email').textContent = `Email: ${vendorEmail}`;
-        document.getElementById('profile-phone').textContent = `Phone: ${vendorPhone}`;
-        // document.getElementById('profile-description').textContent = `Description: ${vendorDescription}`;
-        document.getElementById('profile-display').classList.remove('hidden');
-        document.getElementById('profile-form').reset();
+  // Function to save profile data to local storage
+   // Function to save profile data to local storage
+   function saveProfileData(name, email, phone, address, pictureUrl) {
+    const profileData = {
+        name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        pictureUrl: pictureUrl
+    };
+    localStorage.setItem('profileData', JSON.stringify(profileData));
+}
+
+// Function to load profile data from local storage
+function loadProfileData() {
+    const profileData = localStorage.getItem('profileData');
+    if (profileData) {
+        return JSON.parse(profileData);
     }
+    return null;
+}
+
+// Load profile data on page load
+window.onload = function() {
+    const profileData = loadProfileData();
+    if (profileData) {
+        document.getElementById('resultName').innerText = profileData.name;
+        document.getElementById('resultEmail').innerText = profileData.email;
+        document.getElementById('resultPhone').innerText = profileData.phone;
+        document.getElementById('resultAddress').innerText = profileData.address;
+        document.getElementById('resultPicture').src = profileData.pictureUrl;
+
+        document.getElementById('profile-container').style.display = 'none';
+        document.getElementById('resultSection').style.display = 'block';
+    }
+};
+
+document.getElementById('profile-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+    
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const picture = document.getElementById('picture').files[0];
+    let pictureUrl = "";
+    
+    if (picture) {
+        pictureUrl = URL.createObjectURL(picture);
+    } else {
+        pictureUrl = document.getElementById('resultPicture').src;
+    }
+    
+    // Set the result section with the form data
+    document.getElementById('resultName').innerText = name;
+    document.getElementById('resultEmail').innerText = email;
+    document.getElementById('resultPhone').innerText = phone;
+    document.getElementById('resultAddress').innerText = address;
+    document.getElementById('resultPicture').src = pictureUrl;
+
+    // Save profile data to local storage
+    saveProfileData(name, email, phone, address, pictureUrl);
+    
+    // Show the result section and hide the form container
+    document.getElementById('profile-container').style.display = 'none';
+    document.getElementById('resultSection').style.display = 'block';
+    // document.querySelector(".interface").style.display = 'none';
+    alert('Profile submitted');
 });
 
+document.getElementById('editButton').addEventListener('click', function() {
+    // Fill form fields with current profile details
+    document.getElementById('name').value = document.getElementById('resultName').innerText;
+    document.getElementById('email').value = document.getElementById('resultEmail').innerText;
+    document.getElementById('phone').value = document.getElementById('resultPhone').innerText;
+    document.getElementById('address').value = document.getElementById('resultAddress').innerText;
+    
+    // Show the form container and hide the result section
+    document.getElementById('profile-container').style.display = 'block';
+    document.getElementById('resultSection').style.display = 'none';
+    document.querySelector(".interface").style.display = 'none';
+});
 
