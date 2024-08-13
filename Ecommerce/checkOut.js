@@ -35,28 +35,6 @@ form.addEventListener('submit', function (event) {
 const paystackButton = document.getElementById('paystackButton');
 
 
-// function payWithPaystack(email) {
-//     const totalAmount = JSON.parse(localStorage.getItem('totalAmount')) * 100;
-
-//     let handler = PaystackPop.setup({
-//         key: 'pk_test_9a99a67d1e4a1ac30a80511697d98f516981ef07',
-//         email: email,
-//         amount: totalAmount,
-//         currency: 'NGN',
-//         ref: '' + Math.floor((Math.random() * 1000000000) + 1), 
-//         callback: function(response) {
-//             alert('Payment successful. Transaction reference: ' + response.reference);
-//             window.location.href = 'index.html'; 
-//             clearCart();
-
-//         },
-//         onClose: function() {
-//             alert('Transaction was not completed, window closed.');
-//             window.location.href = 'shop.html';
-//         }
-//     });
-//     handler.openIframe();
-// }
 
 function payWithPaystack(email) {
     const totalAmount = JSON.parse(localStorage.getItem('totalAmount')) * 100;

@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const orderDetails = `
             <p>Thank you for your purchase!</p>
+            <p>You will be redirected to homepage in 10 seconds!</p>
             <p>Transaction Reference: ${orderData.reference}</p>
             <p>Items:</p>
             ${cartItemsHtml}
@@ -147,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('cartState');
     } else {
         document.getElementById('orderDetails').innerHTML = 
-        '<p>No order information available.</p>';
+        '<p>No order information available.</p><p>You will be redirected to homepage in 10 seconds!</p>';
     }
 
     // Redirect to homepage after 10 seconds
