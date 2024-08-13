@@ -132,6 +132,8 @@ logOut.addEventListener ("click", ()=>{
 
 
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Load profile data
     const profileData = loadProfileData();
