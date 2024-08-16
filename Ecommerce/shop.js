@@ -186,15 +186,15 @@ function reloadCart() {
     quantity.innerHTML = count;
 }
 
-// quantity increase and decrease 
+// The data in the checkout
 function change(key, quantity) {
     if (quantity == 0) {
-        checkOutList[key] = null;  // set to null instead of delete
+        checkOutList[key] = null;
     } else {
         checkOutList[key].quantity = quantity;
     }
     reloadCart();
-    saveCartToLocalStorage();  // save the updated cart to localStorage
+    saveCartToLocalStorage(); 
 }
 
 // getting cartitem from local storage

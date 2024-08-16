@@ -247,6 +247,7 @@ body{
     justify-content: flex-start;
     align-items: start;
     text-align: center;
+        height: 2.5rem;
 }
 table{
     border-collapse: collapse;

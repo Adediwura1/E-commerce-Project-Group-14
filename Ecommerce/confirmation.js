@@ -154,5 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect to homepage after 10 seconds
     setTimeout(function() {
         window.location.href = 'index.html';
-    }, 10000); // Adjusted timeout to 10 seconds for practicality
+    }, 10000);
 });

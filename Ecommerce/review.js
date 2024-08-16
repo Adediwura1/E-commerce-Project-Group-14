@@ -24,7 +24,7 @@ document.getElementById('review-form').addEventListener('submit', function(event
         displayReview(review);
     };
     
-    if (reviewImage) {
+    if (reviewImage) { 
         reader.readAsDataURL(reviewImage);
     } else {
         reader.onload({ target: { result: null } });
